@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Application Form</title>
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    .stb-logo {
+
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+      position: center;
+      transform: translate(135%, 1%);
+
+
+
+    }
+
+    form {
+      height: 695px;
+      width: 600px;
+      background-color: rgba(255, 255, 255, 0.13);
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 64%;
+      left: 50%;
+      border-radius: 5px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 40px rgb(8 7 16 / 60%);
+      padding: 50px 35px;
+      border-top-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #f2f2f2;
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgb(10, 20, 50);
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #0b3961;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      form {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 24px;
+
+      }
+
+      label {
+        font-size: 16px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      select,
+      textarea {
+        font-size: 14px;
+      }
+
+      input[type="submit"] {
+        font-size: 14px;
+      }
+    }
+    .card {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      padding: 1rem;
+      width: 100%;
+      text-align: center;
+      color: whitesmoke;
+      background-color: whitesmoke;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
+    }
+    @media (min-width: 600px) {
+      .card {
+        height: 0px;
+        width: 60px;
+      }
+    }
+    .card:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-size: cover;
+      background-position: 0 0;
+      pointer-events: none;
+    }
+    .card:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 200%;
+      pointer-events: none;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.009) 11.7%, rgba(0, 0, 0, 0.034) 22.1%, rgba(0, 0, 0, 0.072) 31.2%, rgba(0, 0, 0, 0.123) 39.4%, rgba(0, 0, 0, 0.182) 46.6%, rgba(0, 0, 0, 0.249) 53.1%, rgba(0, 0, 0, 0.320) 58.9%, rgba(0, 0, 0, 0.394) 64.3%, rgba(0, 0, 0, 0.468) 69.3%, rgba(0, 0, 0, 0.540) 74.1%, rgba(0, 0, 0, 0.607) 78.8%, rgba(0, 0, 0, 0.668) 83.6%, rgba(0, 0, 0, 0.721) 88.7%, rgba(0, 0, 0, 0.762) 94.1%, rgba(0, 0, 0, 0.790) 100%);
+      transform: translateY(-50%);
+    }
+    .card:nth-child(1):before {
+      background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+    }
+
+
+  </style>
+</head>
+<body>
+<img class="stb-logo" src="https://www.stb.com.tn/img/logo_stb.png" alt="STB Bank Logo">
+
+<form>
+  <h1>Loan Application Form</h1>
+  <label for="name">Full Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email Address:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+  <label for="amount">Loan Amount (TND):</label>
+  <input type="number" id="amount" name="amount" min="1000" max="100000" step="1000" required>
+
+  <label for="purpose">Loan Purpose:</label>
+  <select id="purpose" name="purpose" required>
+    <option value="">--Select--</option>
+    <option value="Personal">Personal</option>
+    <option value="Business">Business</option>
+    <option value="Education">Education</option>
+    <option value="Home Improvement">Home Improvement</option>
+  </select>
+
+  <label for="message">Message:</label>
+  <input type="text" id="message" name="message" required>
+  <input type="file" name="file">
+  <input type="submit" value="Upload">
+</form>
+<div class="card">
+  <div class="content">
+    <h2 class="title">logo</h2>
+    <p class="copy">logout</p>
+  </div>
+</div>
+</body>
+</html>
+
